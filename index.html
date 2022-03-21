@@ -28,10 +28,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-5">
-                    <div class="row">
+                    <div class="row boolzapp-search">
                         <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
                             <div class="contact-name d-flex">
-                                <i class="fa-solid fa-user-tie fs-4 me-2"></i>
+                                <i class="fa-solid fa-user-tie me-2 text-success"></i>
                                 <p class="m-0">Matteo</p>
                             </div>
                             <div class="contact-name-search">
@@ -52,7 +52,23 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row boolzapp-contact" v-for="(element, index) in contacts">
+                        <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
+                            <div class="contact-name d-flex">
+                                <!-- <i class="fa-solid fa-user-tie me-2 text-success"></i> -->
+                                <img :src="`img/avatar${element.avatar}.jpg`" alt="">
+                                <div class="contact-name-description d-flex flex-column justify-content-center">
+                                    <p class="m-0 fs-4">{{ element.name }}</p>
+                                    <span class="text-secondary">Ultimo messaggio inviato</span>
+                                </div>
+                                
+                            </div>
+                            <div class="contact-name-search">
+                                <span class="text-secondary">{{ element.messages.date }}</span>
                             </div>
                         </div>
                     </div>

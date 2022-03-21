@@ -31,3 +31,13 @@ main{
 .notify-wrapper > a{
     font-size: .6rem;
 }
+.contact-name > i{
+    font-size: 3rem;
+}
+.contact-name > img{
+    height: 55px;
+    border-radius: 50%;
+}
+.contact-name-description > span{
+    font-size: .8rem;
+}
