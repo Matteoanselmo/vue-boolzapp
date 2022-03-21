@@ -59,7 +59,7 @@
                     </div>
                     <!-- CHAT RECENTI -->
                     <div class="row boolzapp-contact" >
-                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card" @click="element.visible = !element.visible">
+                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card" @click="setUser(element)">
                             <div class="contact-name d-flex">
                                 <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
@@ -75,15 +75,15 @@
                     </div>
                 </div>
                 <!-- AREA CHAT APERTA -->
-                <div class="col-7 my-chat-area" v-for="(element,index) in contacts" :class="(element.visible == false) ? 'd-block' : '' ">
+                <div class="col-7 my-chat-area d-block " >
                     <div class="row ">
                         <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
                             <div class="contact-name d-flex align-items-center">
                                 
-                                <img :src="`img/avatar${element.avatar}.jpg`" alt="" class="ms-4 me-2">
+                                <img :src="`img/avatar${currentUser?.avatar}.jpg`" alt="" class="ms-4 me-2">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
-                                    <p class="m-0 fs-4">{{element.name}}</p>
-                                    <span class="my-span-color">Ultimo accesso {{ element.messages[element.messages.length - 1].date }}</span>
+                                    <p class="m-0 fs-4">{{currentUser?.name}}</p>
+                                    <span class="my-span-color">Ultimo accesso {{currentUser?.messages[currentUser?.messages.length - 1].date }}</span>
                                 </div>
                                 
                             </div>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="row my-chat-view flex-column p-5" >
-                        <div class="col-5 align-self-end" v-for="(messaggio) in element.messages" v-if="(messaggio.status == 'sent')">
+                        <div class="col-5 align-self-end" v-for="(messaggio) in currentUser?.messages" v-if="(messaggio.status == 'sent')">
                             <p class="my-message-color p-2 rounded mt-2">{{ messaggio.message }}</p>
                         </div>
                         <div class="col-5 text-start" v-else>

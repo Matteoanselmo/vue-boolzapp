@@ -1,6 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
+        currentUser: null,
+
         contacts: [
             {
                 name: 'Michele',
@@ -165,5 +167,10 @@ const app = new Vue({
                 ],
             }
         ]
+    },
+    methods: {
+        setUser(user){
+            this.currentUser = user;
+        }
     }
 }) 
