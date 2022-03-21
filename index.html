@@ -29,10 +29,10 @@
             <div class="row">
                 <div class="col-5">
                     <div class="row boolzapp-search">
-                        <div class="col-12 bg-secondary d-flex align-items-center justify-content-between p-2">
+                        <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
                             <div class="contact-name d-flex align-items-center">
                                 <!-- <i class="fa-solid fa-user-tie me-2 text-success bg-white p-3"></i> -->
-                                <img src="img/avatar_2.jpg" alt="" class="ms-4 me-2">
+                                <img src="img/avatar_2.jpg" alt="" class="ms-4">
                                 <p class="m-0">Matteo</p>
                             </div>
                             <div class="contact-name-search text-white">
@@ -41,7 +41,7 @@
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
-                        <div class="col-12 d-flex bg-primary">
+                        <div class="col-12 d-flex notify-container">
                             <i class="fa-regular fa-bell-slash p-3 m-2 bg-white"></i>
                             <div class="notify-wrapper d-flex flex-column justify-content-center">
                                 <p class="m-0">Ricevere notifiche sui nuovi messaggi</p>
@@ -57,8 +57,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- CHAT RECENTI -->
                     <div class="row boolzapp-contact" >
-                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card">
+                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card" @click="element.visible = !element.visible">
                             <div class="contact-name d-flex">
                                 <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
@@ -73,17 +74,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="row">
-                        <div class="col-12 bg-secondary d-flex align-items-center justify-content-between p-2">
+                <!-- AREA CHAT APERTA -->
+                <div class="col-7 my-chat-area" v-for="(element,index) in contacts" :class="(element.visible == false) ? 'd-block' : '' ">
+                    <div class="row ">
+                        <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
                             <div class="contact-name d-flex align-items-center">
-                                <!-- <i class="fa-solid fa-user-tie me-2 text-success bg-white p-3"></i> -->
-                                <img src="img/avatar_2.jpg" alt="" class="ms-4 me-2">
+                                
+                                <img :src="`img/avatar${element.avatar}.jpg`" alt="" class="ms-4 me-2">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
-                                    <p class="m-0 fs-4">Matteo</p>
-                                    <span class="text-light">Ultimo accesso ieri</span>
+                                    <p class="m-0 fs-4">{{element.name}}</p>
+                                    <span class="my-span-color">Ultimo accesso {{ element.messages[element.messages.length - 1].date }}</span>
                                 </div>
-                                <!-- <p class="m-0">Matteo</p> -->
+                                
                             </div>
                             <div class="contact-name-search text-white">
                                 <i class="fa-solid fa-magnifying-glass"></i>
