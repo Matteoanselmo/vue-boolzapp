@@ -86,3 +86,7 @@ i{
 .my-chat-area{
     display: none;
 }
+
+.my-message-color{
+    background-color: #D5F9BA;
+}

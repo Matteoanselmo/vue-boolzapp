@@ -94,8 +94,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-chat-view">
-
+                    <div class="row my-chat-view flex-column p-5" >
+                        <div class="col-5 align-self-end" v-for="(messaggio) in element.messages" v-if="(messaggio.status == 'sent')">
+                            <p class="my-message-color p-2 rounded mt-2">{{ messaggio.message }}</p>
+                        </div>
+                        <div class="col-5 text-start" v-else>
+                            <p class="bg-white p-2 rounded">{{ messaggio.message }}</p>
+                        </div>
                     </div>
                     <div class="row my-row-write-text">
                         <div class="col-12 d-flex align-items-center justify-content-evenly">
