@@ -56,8 +56,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row boolzapp-contact" v-for="(element, index) in contacts">
-                        <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
+                    <div class="row boolzapp-contact" >
+                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
                             <div class="contact-name d-flex">
                                 <!-- <i class="fa-solid fa-user-tie me-2 text-success"></i> -->
                                 <img :src="`img/avatar${element.avatar}.jpg`" alt="">

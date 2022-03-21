@@ -1,6 +1,6 @@
 body{
     font-family: 'Montserrat', 'sans-serif';
-    background-color: lightslategray;
+    background-color: rgb(212, 212, 212);
 }
 
 header{
@@ -13,7 +13,7 @@ main{
     height: 95vh;
     min-width: 1100px;
     margin: .5rem auto;
-    background-color: brown;
+    background-color: rgb(148, 148, 148);
     z-index: 2;
     position: absolute;
     top: 1vh;
@@ -23,6 +23,9 @@ main{
 .fa-bell-slash{
     font-size: 2rem;
     border-radius: 50%;
+}
+.fa-user-tie{
+    margin-left: 1.6rem;
 }
 
 .notify-wrapper > p{
@@ -40,4 +43,10 @@ main{
 }
 .contact-name-description > span{
     font-size: .8rem;
+}
+
+
+.boolzapp-contact{
+    height: 88%;
+    overflow-y: scroll;
 }
