@@ -2,7 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         currentUser: null,
-
+        textNewMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -171,6 +171,25 @@ const app = new Vue({
     methods: {
         setUser(user){
             this.currentUser = user;
+        },
+        addNewMessage(newMessage){
+            const myMessageObj = {
+                date: "10/10/22 15:54:26",
+                message: newMessage,
+                status: "sent"
+            }
+            const answerObj ={
+                date: "10/10/22 16:11:20",
+                message: "La regressione della cresta",
+                status: "received"
+            }
+            this.currentUser.messages.push(myMessageObj);
+            setTimeout(() =>{
+                this.currentUser.messages.push(answerObj);
+            },1500);
+            this.textNewMessage = "";
+            
+            
         }
     }
 }) 
