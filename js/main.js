@@ -188,8 +188,11 @@ const app = new Vue({
                 this.currentUser.messages.push(answerObj);
             },1500);
             this.textNewMessage = "";
-            
-            
-        }
+        },
+        // searchFriend(name){
+        //     for(let i = 0; i < this.contacts.length; i++){
+
+        //     }
+        // }
     }
 }) 
