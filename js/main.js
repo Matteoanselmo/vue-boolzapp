@@ -46,6 +46,7 @@ const app = new Vue({
                     }
                 ],
             },
+            
             {
                 name: 'Samuele',
                 avatar: '_3',

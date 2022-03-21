@@ -24,17 +24,18 @@
     <header>
 
     </header>
-    <main id="app">
-        <div class="container-fluid">
+    <main id="app" class="bg-light">
+        <div class="container-fluid my-container">
             <div class="row">
                 <div class="col-5">
                     <div class="row boolzapp-search">
-                        <div class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
-                            <div class="contact-name d-flex">
-                                <i class="fa-solid fa-user-tie me-2 text-success"></i>
+                        <div class="col-12 bg-secondary d-flex align-items-center justify-content-between p-2">
+                            <div class="contact-name d-flex align-items-center">
+                                <!-- <i class="fa-solid fa-user-tie me-2 text-success bg-white p-3"></i> -->
+                                <img src="img/avatar_2.jpg" alt="" class="ms-4 me-2">
                                 <p class="m-0">Matteo</p>
                             </div>
-                            <div class="contact-name-search">
+                            <div class="contact-name-search text-white">
                                 <i class="fa-solid fa-retweet"></i>
                                 <i class="fa-solid fa-message px-2"></i>
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -57,9 +58,8 @@
                         </div>
                     </div>
                     <div class="row boolzapp-contact" >
-                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2">
+                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card">
                             <div class="contact-name d-flex">
-                                <!-- <i class="fa-solid fa-user-tie me-2 text-success"></i> -->
                                 <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
                                     <p class="m-0 fs-4">{{ element.name }}</p>
@@ -74,7 +74,34 @@
                     </div>
                 </div>
                 <div class="col-7">
-                    
+                    <div class="row">
+                        <div class="col-12 bg-secondary d-flex align-items-center justify-content-between p-2">
+                            <div class="contact-name d-flex align-items-center">
+                                <!-- <i class="fa-solid fa-user-tie me-2 text-success bg-white p-3"></i> -->
+                                <img src="img/avatar_2.jpg" alt="" class="ms-4 me-2">
+                                <div class="contact-name-description d-flex flex-column justify-content-center">
+                                    <p class="m-0 fs-4">Matteo</p>
+                                    <span class="text-light">Ultimo accesso ieri</span>
+                                </div>
+                                <!-- <p class="m-0">Matteo</p> -->
+                            </div>
+                            <div class="contact-name-search text-white">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip px-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-chat-view">
+
+                    </div>
+                    <div class="row my-row-write-text">
+                        <div class="col-12 d-flex align-items-center justify-content-evenly">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input class="rounded form-control" type="text" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
