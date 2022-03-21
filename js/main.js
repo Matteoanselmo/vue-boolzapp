@@ -178,21 +178,23 @@ const app = new Vue({
                 message: newMessage,
                 status: "sent"
             }
-            const answerObj ={
+            let answerObj ={
                 date: "10/10/22 16:11:20",
-                message: "La regressione della cresta",
+                message: "Sta scrivendo...",
                 status: "received"
             }
             this.currentUser.messages.push(myMessageObj);
+            this.currentUser.messages.push(answerObj);
             setTimeout(() =>{
+                this.currentUser.messages.pop(answerObj);
+                answerObj = {
+                    date: "10/10/22 16:12:20",
+                    message: "La regressione della cresta ;-)",
+                    status: "received"
+                }
                 this.currentUser.messages.push(answerObj);
-            },1500);
+            },1700);
             this.textNewMessage = "";
         },
-        // searchFriend(name){
-        //     for(let i = 0; i < this.contacts.length; i++){
-
-        //     }
-        // }
     }
 }) 
