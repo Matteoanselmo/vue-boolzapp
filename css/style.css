@@ -4,7 +4,7 @@ body{
 }
 
 header{
-    height: 10vh;
+    height: 15vh;
     width: 100%;
     background-color: #009688;
 }
@@ -75,18 +75,24 @@ i{
     height: 85%;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    height: 741px;
 }
 .my-row-write-text{
     height: 60px;
+    border-left: 1px solid white;
 }
 .my-row-write-text input{
     width: 34rem;
 }
-
-.my-chat-area{
-    display: none;
-}
-
 .my-message-color{
     background-color: #D5F9BA;
+}
+
+.boolzapp-search div:first-child{
+    border-right: 1px solid white;
+}
+.my-message{
+    min-width: 210px;
 }
