@@ -21,8 +21,11 @@
     <title>Vue boolzap</title>
 </head>
 <body>
-    <header>
-
+    <header >
+        <div class="text-white pt-3 ps-4">
+            <h1>Boolzapp </h1>
+            <h1>x BRONDI</h1>
+        </div>
     </header>
     <main id="app" class="bg-light">
         <div class="container-fluid my-container">
@@ -52,7 +55,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchUser" >
                             </div>
                         </div>
                     </div>

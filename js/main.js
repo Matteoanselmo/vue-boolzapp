@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
+        searchUser: '',
         currentUser: null,
         textNewMessage: '',
         contacts: [
@@ -196,5 +197,9 @@ const app = new Vue({
             },1700);
             this.textNewMessage = "";
         },
+        viewSearchUser(search){
+            console.log(search);
+        }
     }
 }) 
+
