@@ -55,7 +55,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchUser" >
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchUser" @keydown.enter="viewConsole(contacts, searchUser )">
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <!-- CHAT RECENTI -->
 
                     <div class="row boolzapp-contact" >
-                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card" @click="setUser(element)">
+                        <div v-for="(element, index) in contacts" class="col-12 bg-light d-flex align-items-center justify-content-between p-2 my-contact-card" @click="setUser(element)" :class="(!element.visible) ? 'd-none' : 'd-block'">
                             <div class="contact-name d-flex">
                                 <img :src="`img/avatar${element.avatar}.jpg`" alt="">
                                 <div class="contact-name-description d-flex flex-column justify-content-center">
@@ -104,7 +104,7 @@
                         <div class="col-5 align-self-end" v-for="(messaggio) in currentUser?.messages" v-if="(messaggio.status == 'sent')">
                             <p class="my-message-color p-2 rounded mt-2 my-message">{{ messaggio.message }}</p>
                         </div>
-                        <div class="col-5 text-start" v-else>
+                        <div class="col-5" v-else>
                             <p class="bg-white p-2 rounded my-message">{{ messaggio.message }}</p>
                         </div>
                     </div>

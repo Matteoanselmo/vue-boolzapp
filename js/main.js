@@ -197,8 +197,19 @@ const app = new Vue({
             },1700);
             this.textNewMessage = "";
         },
-        viewSearchUser(search){
-            console.log(search);
+        // viewSearchUser(search){
+        //     if(!this.contacts.name.includes(search)){
+        //         this.contacts.visible = false;
+        //     }
+        // }
+        viewConsole(array, userToSearch){
+            for(let i = 0; i < array.length; i++){
+                array[i].visible = false
+                if(array[i].name.toLowerCase() == userToSearch.toLowerCase()){
+                    array[i].visible = true;
+                    console.log(array[i].name);
+                }
+            }
         }
     }
 }) 

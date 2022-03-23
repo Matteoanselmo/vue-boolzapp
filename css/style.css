@@ -64,7 +64,7 @@ i{
 }
 
 .my-contact-card{
-    min-height: 83px;
+    height: 55px;
 }
 .my-contact-card:hover{
     background-color: lightgrey!important;
